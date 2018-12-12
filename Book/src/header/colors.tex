@@ -1,0 +1,126 @@
+\usepackage{xcolor}
+
+% Defining Colors goes by the scheme of: \definecolor{name}{model}{color-spec}
+
+%------------------------------------------------------------------------------
+% Gray
+%------------------------------------------------------------------------------
+\definecolor{white}{HTML}{FFFFFF}
+\definecolor{lightest-gray}{HTML}{FAFCFC}
+\definecolor{lighter-gray}{HTML}{F3F7F9}
+\definecolor{light-gray}{HTML}{DAE4E9}
+\definecolor{gray}{HTML}{9BABB4}
+\definecolor{dark-gray}{HTML}{70818A}
+\definecolor{darker-gray}{HTML}{596A73}
+\definecolor{darkest-gray}{HTML}{364349}
+\definecolor{black}{HTML}{222B2F}
+
+%------------------------------------------------------------------------------
+% Red
+%------------------------------------------------------------------------------
+\definecolor{lightest-red}{HTML}{FCEBEA}
+\definecolor{lighter-red}{HTML}{F9ACAA}
+\definecolor{light-red}{HTML}{EF5753}
+\definecolor{red}{HTML}{E3342F}
+\definecolor{dark-red}{HTML}{CC1F1A}
+\definecolor{darker-red}{HTML}{6A1B19}
+\definecolor{darkest-red}{HTML}{420806}
+
+%------------------------------------------------------------------------------
+% Orange
+%------------------------------------------------------------------------------
+\definecolor{lightest-orange}{HTML}{FFF5EB}
+\definecolor{lighter-orange}{HTML}{FCD9B6}
+\definecolor{light-orange}{HTML}{FAAD63}
+\definecolor{orange}{HTML}{F6993F}
+\definecolor{dark-orange}{HTML}{DE751F}
+\definecolor{darker-orange}{HTML}{7F4012}
+\definecolor{darkest-orange}{HTML}{542605}
+
+%------------------------------------------------------------------------------
+% Yellow
+%------------------------------------------------------------------------------
+\definecolor{lightest-yellow}{HTML}{FCFBEB}
+\definecolor{lighter-yellow}{HTML}{FFF9C2}
+\definecolor{light-yellow}{HTML}{FFF382}
+\definecolor{yellow}{HTML}{FFED4A}
+\definecolor{dark-yellow}{HTML}{F2D024}
+\definecolor{darker-yellow}{HTML}{684F1D}
+\definecolor{darkest-yellow}{HTML}{453411}
+
+%------------------------------------------------------------------------------
+% Green
+%------------------------------------------------------------------------------
+\definecolor{lightest-green}{HTML}{E3FCEC}
+\definecolor{lighter-green}{HTML}{A2F5BF}
+\definecolor{light-green}{HTML}{51D88A}
+\definecolor{green}{HTML}{38C172}
+\definecolor{dark-green}{HTML}{1F9D55}
+\definecolor{darker-green}{HTML}{0B4228}
+\definecolor{darkest-green}{HTML}{032D19}
+
+%------------------------------------------------------------------------------
+% Teal
+%------------------------------------------------------------------------------
+\definecolor{lightest-teal}{HTML}{E8FFFE}
+\definecolor{lighter-teal}{HTML}{A0F0ED}
+\definecolor{light-teal}{HTML}{64D5CA}
+\definecolor{teal}{HTML}{4DC0B5}
+\definecolor{dark-teal}{HTML}{38A89D}
+\definecolor{darker-teal}{HTML}{174E4B}
+\definecolor{darkest-teal}{HTML}{0D3331}
+
+%------------------------------------------------------------------------------
+% Blue
+%------------------------------------------------------------------------------
+\definecolor{lightest-blue}{HTML}{EFF8FF}
+\definecolor{lighter-blue}{HTML}{BCDEFA}
+\definecolor{light-blue}{HTML}{6CB2EB}
+\definecolor{blue}{HTML}{3490DC}
+\definecolor{dark-blue}{HTML}{2779BD}
+\definecolor{darker-blue}{HTML}{103D60}
+\definecolor{darkest-blue}{HTML}{05233B}
+
+%------------------------------------------------------------------------------
+% Indigo
+%------------------------------------------------------------------------------
+\definecolor{lightest-indigo}{HTML}{E6E8FF}
+\definecolor{lighter-indigo}{HTML}{B2B7FF}
+\definecolor{light-indigo}{HTML}{7886D7}
+\definecolor{indigo}{HTML}{6574CD}
+\definecolor{dark-indigo}{HTML}{5661B3}
+\definecolor{darker-indigo}{HTML}{2F365F}
+\definecolor{darkest-indigo}{HTML}{191E38}
+
+%------------------------------------------------------------------------------
+% Purple
+%------------------------------------------------------------------------------
+\definecolor{lightest-purple}{HTML}{F3EBFF}
+\definecolor{lighter-purple}{HTML}{D6BBFC}
+\definecolor{light-purple}{HTML}{A779E9}
+\definecolor{purple}{HTML}{9561E2}
+\definecolor{dark-purple}{HTML}{794ACF}
+\definecolor{darker-purple}{HTML}{352465}
+\definecolor{darkest-purple}{HTML}{1F133F}
+
+%------------------------------------------------------------------------------
+% Pink
+%------------------------------------------------------------------------------
+\definecolor{lightest-pink}{HTML}{FFEBEF}
+\definecolor{lighter-pink}{HTML}{FFBBCA}
+\definecolor{light-pink}{HTML}{FA7EA8}
+\definecolor{pink}{HTML}{F66D9B}
+\definecolor{dark-pink}{HTML}{EB5286}
+\definecolor{darker-pink}{HTML}{72173A}
+\definecolor{darkest-pink}{HTML}{45051E}
+
+%------------------------------------------------------------------------------
+% Setting the default text color
+%------------------------------------------------------------------------------
+\makeatletter
+\newcommand{\globalcolor}[1]{%
+	\color{#1}\global\let\default@color\current@color
+}
+\makeatother
+
+\AtBeginDocument{\globalcolor{black}}

@@ -1,0 +1,65 @@
+\newcommand\tab[1][0.5cm]{\hspace*{#1}}
+
+%------------------------------------------------------------------------------
+% Header Settings
+%------------------------------------------------------------------------------
+\usepackage[footsepline,automark]{scrlayer-scrpage}
+
+\addtokomafont{footsepline}{\linecolor}
+
+\ModifyLayer[addvoffset=.6ex]{scrheadings.foot.odd}
+\ModifyLayer[addvoffset=.6ex]{scrheadings.foot.even}
+\ModifyLayer[addvoffset=.6ex]{scrheadings.foot.oneside}
+\ModifyLayer[addvoffset=.6ex]{plain.scrheadings.foot.odd}
+\ModifyLayer[addvoffset=.6ex]{plain.scrheadings.foot.even}
+\ModifyLayer[addvoffset=.6ex]{plain.scrheadings.foot.oneside}
+
+\renewcommand*\chaptermarkformat{\chapapp\ \thechapter: \ } 
+
+\renewcommand{\footfont}{\normalfont}
+\pagestyle{scrheadings} 
+\lohead{}
+\cohead{}
+\rohead{}
+\lehead{}
+\cehead{}
+\rehead{}
+\lofoot{}
+\cofoot{}
+\rofoot{\textsf{\rightmark\tab | \tab\thepage}}
+\lefoot{\textsf{\thepage \tab | \tab\leftmark }}
+\cefoot{}
+\refoot{}
+
+%------------------------------------------------------------------------------
+% Chapter heading
+%------------------------------------------------------------------------------
+\let\raggedchapter\raggedleft
+
+\setkomafont{chapterprefix}{\normalsize\mdseries}
+\KOMAoption{chapterprefix}{true}
+\renewcommand{\chapterheadmidvskip}{%
+	\par\nobreak\vskip -.1cm {\linecolor\rule{\textwidth}{0.25pt}}\par%
+}
+\RedeclareSectionCommand[beforeskip=0pt,afterskip=8\baselineskip]{chapter}
+\usepackage{xpatch}
+\tracingpatches
+\xpatchcmd{\@@makeschapterhead}{%for the unnumbered
+	\usekomafont{chapter}{#1}\par
+}{%
+\usekomafont{chapter}{\MakeUppercase{#1}}\par
+}{}{}
+\xpatchcmd{\@@makechapterhead}{%for numbered
+	\usekomafont{chapter}{#1}\par
+}{%
+\usekomafont{chapter}{\MakeUppercase{#1}}\par
+}{}{}
+\renewcommand*{\chapterformat}{%
+	\mbox{\MakeUppercase{\chapappifchapterprefix{\nobreakspace}}\thechapter\autodot
+		\IfUsePrefixLine{}{\enskip}}%
+}
+
+
+\KOMAoptions{toc=chapterentrydotfill}
+
+\setkomafont{pagenumber}{\sffamily}
